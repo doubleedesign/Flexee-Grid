@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Grid test</title>
+<link href="dist/grid.css" rel="stylesheet"/>
+<style type="text/css">
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+[class*="row"] {
+}
+.column, .columns {
+	border: 1px solid #000;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Flexee Grid Test</h1>
+
+<h2>Option 1: Apply a class to a row and the columns inside will size accordingly, wrapping onto a new line if there's more.</h2>
+
+<p>Default classes are "row-of-x", then if you need it to change as the screen size changes, additional classes can be added to change at a specified breakpoint. e.g. "row-of-4 tablet-row-of-8" with 8 columns inside it will be 2 rows of 4 up until the tablet breakpoint, then it will change to one row of 8. You can adjust at as many of the set breakpoints as you need.</p>
+
+<h3>row-of-1</h3>
+<div class="row-of-1">
+	<div class="column"><p>You can't keep the Democrats out of the White House forever, and when they get in, I'm back on the streets, with all my criminal buddies.</p></div>
+    <div class="column"><p>When I held that gun in my hand, I felt a surge of power…like God must feel when he's holding a gun.</p></div>
+    <div class="column"><p>I can't go to juvie. They use guys like me as currency.</p></div>
+</div>
+
+<h3>row-of-2</h3>
+<div class="row-of-2">
+	<div class="column"><p>You can't keep the Democrats out of the White House forever, and when they get in, I'm back on the streets, with all my criminal buddies.</p></div>
+    <div class="column"><p>When I held that gun in my hand, I felt a surge of power…like God must feel when he's holding a gun.</p></div>
+    <div class="column"><p>I can't go to juvie. They use guys like me as currency.</p></div>
+    <div class="column"><p>Weaseling out of things is important to learn. It's what separates us from the animals…except the weasel.</p></div>
+</div>
+
+<h3>row-of-3</h3>
+<div class="row-of-3">
+	<div class="column"><p>You can't keep the Democrats out of the White House forever, and when they get in, I'm back on the streets, with all my criminal buddies.</p></div>
+    <div class="column"><p>When I held that gun in my hand, I felt a surge of power…like God must feel when he's holding a gun.</p></div>
+    <div class="column"><p>I can't go to juvie. They use guys like me as currency.</p></div>
+    <div class="column"><p>Weaseling out of things is important to learn. It's what separates us from the animals…except the weasel.</p></div>
+    <div class="column"><p>Fat Tony is a cancer on this fair city! He is the cancer and I am the…uh…what cures cancer?</p></div>
+    <div class="column"><p>And now, in the spirit of the season: start shopping. And for every dollar of Krusty merchandise you buy, I will be nice to a sick kid.</p></div>
+</div>
+
+<h3>row-of-4</h3>
+<div class="row-of-4">
+	<div class="column"><p>You can't keep the Democrats out of the White House forever, and when they get in, I'm back on the streets, with all my criminal buddies.</p></div>
+    <div class="column"><p>When I held that gun in my hand, I felt a surge of power…like God must feel when he's holding a gun.</p></div>
+    <div class="column"><p>I can't go to juvie. They use guys like me as currency.</p></div>
+    <div class="column"><p>Weaseling out of things is important to learn. It's what separates us from the animals…except the weasel.</p></div>
+    <div class="column"><p>Fat Tony is a cancer on this fair city! He is the cancer and I am the…uh…what cures cancer?</p></div>
+    <div class="column"><p>And now, in the spirit of the season: start shopping. And for every dollar of Krusty merchandise you buy, I will be nice to a sick kid.</p></div>
+    <div class="column"><p>Homer no function beer well without.</p></div>
+    <div class="column"><p>Whoa, slow down there, maestro. There's a *New* Mexico? </p></div>
+</div>
+
+<h3>row-of-4 tablet-row-of-8</h3>
+<div class="row-of-4 tablet-row-of-8">
+	<div class="column"><p>You can't keep the Democrats out of the White House forever, and when they get in, I'm back on the streets, with all my criminal buddies.</p></div>
+    <div class="column"><p>When I held that gun in my hand, I felt a surge of power…like God must feel when he's holding a gun.</p></div>
+    <div class="column"><p>I can't go to juvie. They use guys like me as currency.</p></div>
+    <div class="column"><p>Weaseling out of things is important to learn. It's what separates us from the animals…except the weasel.</p></div>
+    <div class="column"><p>Fat Tony is a cancer on this fair city! He is the cancer and I am the…uh…what cures cancer?</p></div>
+    <div class="column"><p>And now, in the spirit of the season: start shopping. And for every dollar of Krusty merchandise you buy, I will be nice to a sick kid.</p></div>
+    <div class="column"><p>Homer no function beer well without.</p></div>
+    <div class="column"><p>Whoa, slow down there, maestro. There's a *New* Mexico? </p></div>
+</div>
+
+<h2>Option 2: Apply classes to the columns so they don't all have to be the same width.</h2>
+<h3>row</h3>
+<div class="row">
+	<div class="start-12 medium-6 tablet-4 large-12 columns">
+    	<p><strong>start-12 medium-6 tablet-4 large-12 columns</strong></p>
+    	<p>You can't keep the Democrats out of the White House forever, and when they get in, I'm back on the streets, with all my criminal buddies.</p>
+    </div>
+    <div class="start-12 medium-6 tablet-4 large-6 columns">
+    	<p><strong>start-12 medium-6 tablet-4 large-6 columns</strong></p>
+    	<p>When I held that gun in my hand, I felt a surge of power…like God must feel when he's holding a gun.</p>
+    </div>
+    <div class="start-12 tablet-2 large-6 columns">
+    	<p><strong>start-12 tablet-2 large-6 columns</strong></p>
+    	<p>When I held that gun in my hand, I felt a surge of power…like God must feel when he's holding a gun.</p>
+    </div>
+    <div class="start-12 medium-4 tablet-2 large-12 columns">
+    	<p><strong>start-12 medium-4 tablet-2 large-12 columns</strong></p>
+    	<p>I can't go to juvie. They use guys like me as currency.</p>
+    </div>
+</div>
+
+
+<h2>Option 3: Fit all the things evenly across rows based on their content, no matter how many there is.</h2>
+<h3>row-fit</h3>
+<div class="row-fit">
+	<div class="column"><p>You can't keep the Democrats out of the White House forever, and when they get in, I'm back on the streets, with all my criminal buddies.</p></div>
+    <div class="column"><p>When I held that gun in my hand, I felt a surge of power…like God must feel when he's holding a gun.</p></div>
+    <div class="column"><p>I can't go to juvie. They use guys like me as currency.</p></div>
+</div>
+
+<div class="row-fit">
+	<div class="column"><p>You can't keep the Democrats out of the White House forever, and when they get in, I'm back on the streets, with all my criminal buddies.</p></div>
+    <div class="column"><p>When I held that gun in my hand, I felt a surge of power…like God must feel when he's holding a gun.</p></div>
+    <div class="column"><p>I can't go to juvie. They use guys like me as currency.</p></div>
+    <div class="column"><p>Weaseling out of things is important to learn. It's what separates us from the animals…except the weasel.</p></div>
+    <div class="column"><p>Fat Tony is a cancer on this fair city! He is the cancer and I am the…uh…what cures cancer?</p></div>
+    <div class="column"><p>And now, in the spirit of the season: start shopping. And for every dollar of Krusty merchandise you buy, I will be nice to a sick kid.</p></div>
+    <div class="column"><p>Homer no function beer well without.</p></div>
+</div>
+
+<div class="row-fit">
+	<div class="column"><p>You can't keep the Democrats out of the White House forever, and when they get in, I'm back on the streets, with all my criminal buddies.</p></div>
+    <div class="column"><p>When I held that gun in my hand, I felt a surge of power…like God must feel when he's holding a gun.</p></div>
+    <div class="column"><p>I can't go to juvie. They use guys like me as currency.</p></div>
+    <div class="column"><p>Weaseling out of things is important to learn. It's what separates us from the animals…except the weasel.</p></div>
+    <div class="column"><p>Fat Tony is a cancer on this fair city! He is the cancer and I am the…uh…what cures cancer?</p></div>
+    <div class="column"><p>And now, in the spirit of the season: start shopping. And for every dollar of Krusty merchandise you buy, I will be nice to a sick kid.</p></div>
+    <div class="column"><p>Homer no function beer well without.</p></div>
+    <div class="column"><p>Whoa, slow down there, maestro. There's a *New* Mexico? </p></div>
+    <div class="column"><p>9</p></div>
+    <div class="column"><p>10</p></div>
+    <div class="column"><p>11</p></div>
+    <div class="column"><p>12</p></div>
+    <div class="column"><p>13</p></div>
+    <div class="column"><p>14</p></div>
+    <div class="column"><p>15</p></div>
+    <div class="column"><p>16</p></div>
+    <div class="column"><p>17</p></div>
+    <div class="column"><p>18</p></div>
+    <div class="column"><p>19</p></div>
+    <div class="column"><p>20</p></div>
+</div>
+
+</body>
+</html>
