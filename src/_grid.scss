@@ -12,24 +12,24 @@ $column-count: 		12;
 
 // Breakpoints
 $breakpoints: (
-	'smaller'	: 30em,		// 480px
-	'small'  	: 37.5em, 	// 600px
-	'medium' 	: 48em, 	// 768px
-	'tablet' 	: 60em, 	// 960px
-	'large'  	: 80em,		// 1280px
-	'xlarge' 	: 100em, 	// 1600px
-	'xxlarge' 	: 120em, 	// 1920px
+		'smaller'	: 30em,		// 480px
+		'small'  	: 37.5em, 	// 600px
+		'medium' 	: 48em, 	// 768px
+		'tablet' 	: 60em, 	// 960px
+		'large'  	: 80em,		// 1280px
+		'xlarge' 	: 100em, 	// 1600px
+		'xxlarge' 	: 120em, 	// 1920px
 );
 
 // Spacing
 $grid-gutter: (
-	'start' 	: 0.625em, // 10px
-	'small'  	: 0.625em, // 10px
-	'medium' 	: 1.250em, // 20px
-	'tablet' 	: 1.250em, // 20px
-	'large'  	: 1.875em, // 30px
-	'xlarge' 	: 2.500em, // 40px
-	'xxlarge' 	: 2.500em, // 50px
+		'start' 	: 0.625em, // 10px
+		'small'  	: 0.625em, // 10px
+		'medium' 	: 1.250em, // 20px
+		'tablet' 	: 1.250em, // 20px
+		'large'  	: 1.875em, // 30px
+		'xlarge' 	: 2.500em, // 40px
+		'xxlarge' 	: 2.500em, // 50px
 );
 $global-padding: 1.875em;
 $global-margin: 1.875em;
@@ -96,33 +96,33 @@ body {
 	padding-right: map-get($grid-gutter,start);
 
 	@include bp-small {
-		padding-left: map-get($grid-gutter,$small);
-		padding-right: map-get($grid-gutter,$small);
+		padding-left: map-get($grid-gutter, 'small');
+		padding-right: map-get($grid-gutter, 'small');
 	}
 
 	@include bp-medium {
-		padding-left: map-get($grid-gutter,$medium);
-		padding-right: map-get($grid-gutter,$medium);
+		padding-left: map-get($grid-gutter, 'medium');
+		padding-right: map-get($grid-gutter, 'medium');
 	}
 
 	@include bp-tablet {
-		padding-left: map-get($grid-gutter,$tablet);
-		padding-right: map-get($grid-gutter,$tablet);
+		padding-left: map-get($grid-gutter, 'tablet');
+		padding-right: map-get($grid-gutter, 'tablet');
 	}
 
 	@include bp-large {
-		padding-left: map-get($grid-gutter,$large);
-		padding-right: map-get($grid-gutter,$large);
+		padding-left: map-get($grid-gutter, 'large');
+		padding-right: map-get($grid-gutter, 'large');
 	}
 
 	@include bp-xlarge {
-		padding-left: map-get($grid-gutter,$xlarge);
-		padding-right: map-get($grid-gutter,$xlarge);
+		padding-left: map-get($grid-gutter, 'xlarge');
+		padding-right: map-get($grid-gutter, 'xlarge');
 	}
 
 	@include bp-xxlarge {
-		padding-left: map-get($grid-gutter,$xxlarge);
-		padding-right: map-get($grid-gutter,$xxlarge);
+		padding-left: map-get($grid-gutter, 'xxlarge');
+		padding-right: map-get($grid-gutter, 'xxlarge');
 	}
 }
 
