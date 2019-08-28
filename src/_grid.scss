@@ -159,8 +159,8 @@ body {
  * Variable width blocks based on the class given to the columns
  */
 
-// Column widths
-$columns-1: (100%/$column-count);
+$column-width: (100%/$column-count);
+/*
 $columns-2: ($columns-1*2);
 $columns-3: ($columns-1*3);
 $columns-4: ($columns-1*4);
@@ -171,113 +171,31 @@ $columns-8: ($columns-1*8);
 $columns-9: ($columns-1*9);
 $columns-10: ($columns-1*10);
 $columns-11: ($columns-1*11);
-$columns-12: ($columns-1*12);
+$columns-12: ($columns-1*12); */
 // If your $column-count is larger than 12, add more variables here accordingly. You will also need to add more column classes below.
 
-.row .columns {
-	&.start-1 { flex-basis: $columns-1; max-width: $columns-1; }
-	&.start-2 { flex-basis: $columns-2; max-width: $columns-2; }
-	&.start-3 { flex-basis: $columns-3; max-width: $columns-3; }
-	&.start-4 { flex-basis: $columns-4; max-width: $columns-4; }
-	&.start-5 { flex-basis: $columns-5; max-width: $columns-5; }
-	&.start-6 { flex-basis: $columns-6; max-width: $columns-6; }
-	&.start-7 { flex-basis: $columns-7; max-width: $columns-7; }
-	&.start-8 { flex-basis: $columns-8; max-width: $columns-8; }
-	&.start-9 { flex-basis: $columns-9; max-width: $columns-9; }
-	&.start-10 { flex-basis: $columns-10; max-width: $columns-10; }
-	&.start-11 { flex-basis: $columns-11; max-width: $columns-11; }
-	&.start-12 { flex-basis: $columns-12; max-width: $columns-12; }
+.columns {
 
-	@include bp-small {
-		&.small-1 { flex-basis: $columns-1; max-width: $columns-1; }
-		&.small-2 { flex-basis: $columns-2; max-width: $columns-2; }
-		&.small-3 { flex-basis: $columns-3; max-width: $columns-3; }
-		&.small-4 { flex-basis: $columns-4; max-width: $columns-4; }
-		&.small-5 { flex-basis: $columns-5; max-width: $columns-5; }
-		&.small-6 { flex-basis: $columns-6; max-width: $columns-6; }
-		&.small-7 { flex-basis: $columns-7; max-width: $columns-7; }
-		&.small-8 { flex-basis: $columns-8; max-width: $columns-8; }
-		&.small-9 { flex-basis: $columns-9; max-width: $columns-9; }
-		&.small-10 { flex-basis: $columns-10; max-width: $columns-10; }
-		&.small-11 { flex-basis: $columns-11; max-width: $columns-11; }
-		&.small-12 { flex-basis: $columns-12; max-width: $columns-12; }
+	// Starting/all sizes
+	@for $i from 1 through $column-count {
+		&.start-#{$i} {
+			flex-basis: ($column-width*$i);
+		}
 	}
 
-	@include bp-medium {
-		&.medium-1 { flex-basis: $columns-1; max-width: $columns-1; }
-		&.medium-2 { flex-basis: $columns-2; max-width: $columns-2; }
-		&.medium-3 { flex-basis: $columns-3; max-width: $columns-3; }
-		&.medium-4 { flex-basis: $columns-4; max-width: $columns-4; }
-		&.medium-5 { flex-basis: $columns-5; max-width: $columns-5; }
-		&.medium-6 { flex-basis: $columns-6; max-width: $columns-6; }
-		&.medium-7 { flex-basis: $columns-7; max-width: $columns-7; }
-		&.medium-8 { flex-basis: $columns-8; max-width: $columns-8; }
-		&.medium-9 { flex-basis: $columns-9; max-width: $columns-9; }
-		&.medium-10 { flex-basis: $columns-10; max-width: $columns-10; }
-		&.medium-11 { flex-basis: $columns-11; max-width: $columns-11; }
-		&.medium-12 { flex-basis: $columns-12; max-width: $columns-12; }
-	}
+	// Responsive. Loop through the breakpoints,
+	// and within that loop through the column count to create column classes
+	// Note: Dynamic mixin names are not a thing so we have to use the full media query
+	@each $name, $value in $breakpoints  {
+		@media only screen and (min-width: map-get($breakpoints, $name)) {
 
-	@include bp-tablet {
-		&.tablet-1 { flex-basis: $columns-1; max-width: $columns-1; }
-		&.tablet-2 { flex-basis: $columns-2; max-width: $columns-2; }
-		&.tablet-3 { flex-basis: $columns-3; max-width: $columns-3; }
-		&.tablet-4 { flex-basis: $columns-4; max-width: $columns-4; }
-		&.tablet-5 { flex-basis: $columns-5; max-width: $columns-5; }
-		&.tablet-6 { flex-basis: $columns-6; max-width: $columns-6; }
-		&.tablet-7 { flex-basis: $columns-7; max-width: $columns-7; }
-		&.tablet-8 { flex-basis: $columns-8; max-width: $columns-8; }
-		&.tablet-9 { flex-basis: $columns-9; max-width: $columns-9; }
-		&.tablet-10 { flex-basis: $columns-10; max-width: $columns-10; }
-		&.tablet-11 { flex-basis: $columns-11; max-width: $columns-11; }
-		&.tablet-12 { flex-basis: $columns-12; max-width: $columns-12; }
+			@for $i from 1 through $column-count {
+				&.#{$name}-#{$i} {
+					flex-basis: ($column-width*$i);
+				}
+			}
+		}
 	}
-
-	@include bp-large {
-		&.large-1 { flex-basis: $columns-1; max-width: $columns-1; }
-		&.large-2 { flex-basis: $columns-2; max-width: $columns-2; }
-		&.large-3 { flex-basis: $columns-3; max-width: $columns-3; }
-		&.large-4 { flex-basis: $columns-4; max-width: $columns-4; }
-		&.large-5 { flex-basis: $columns-5; max-width: $columns-5; }
-		&.large-6 { flex-basis: $columns-6; max-width: $columns-6; }
-		&.large-7 { flex-basis: $columns-7; max-width: $columns-7; }
-		&.large-8 { flex-basis: $columns-8; max-width: $columns-8; }
-		&.large-9 { flex-basis: $columns-9; max-width: $columns-9; }
-		&.large-10 { flex-basis: $columns-10; max-width: $columns-10; }
-		&.large-11 { flex-basis: $columns-11; max-width: $columns-11; }
-		&.large-12 { flex-basis: $columns-12; max-width: $columns-12; }
-	}
-
-	@include bp-xlarge {
-		&.xlarge-1 { flex-basis: $columns-1; max-width: $columns-1; }
-		&.xlarge-2 { flex-basis: $columns-2; max-width: $columns-2; }
-		&.xlarge-3 { flex-basis: $columns-3; max-width: $columns-3; }
-		&.xlarge-4 { flex-basis: $columns-4; max-width: $columns-4; }
-		&.xlarge-5 { flex-basis: $columns-5; max-width: $columns-5; }
-		&.xlarge-6 { flex-basis: $columns-6; max-width: $columns-6; }
-		&.xlarge-7 { flex-basis: $columns-7; max-width: $columns-7; }
-		&.xlarge-8 { flex-basis: $columns-8; max-width: $columns-8; }
-		&.xlarge-9 { flex-basis: $columns-9; max-width: $columns-9; }
-		&.xlarge-10 { flex-basis: $columns-10; max-width: $columns-10; }
-		&.xlarge-11 { flex-basis: $columns-11; max-width: $columns-11; }
-		&.xlarge-12 { flex-basis: $columns-12; max-width: $columns-12; }
-	}
-
-	@include bp-xxlarge {
-		&.xxlarge-1 { flex-basis: $columns-1; max-width: $columns-1; }
-		&.xxlarge-2 { flex-basis: $columns-2; max-width: $columns-2; }
-		&.xxlarge-3 { flex-basis: $columns-3; max-width: $columns-3; }
-		&.xxlarge-4 { flex-basis: $columns-4; max-width: $columns-4; }
-		&.xxlarge-5 { flex-basis: $columns-5; max-width: $columns-5; }
-		&.xxlarge-6 { flex-basis: $columns-6; max-width: $columns-6; }
-		&.xxlarge-7 { flex-basis: $columns-7; max-width: $columns-7; }
-		&.xxlarge-8 { flex-basis: $columns-8; max-width: $columns-8; }
-		&.xxlarge-9 { flex-basis: $columns-9; max-width: $columns-9; }
-		&.xxlarge-10 { flex-basis: $columns-10; max-width: $columns-10; }
-		&.xxlarge-11 { flex-basis: $columns-11; max-width: $columns-11; }
-		&.xxlarge-12 { flex-basis: $columns-12; max-width: $columns-12; }
-	}
-
 }
 
 
