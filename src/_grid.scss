@@ -1,87 +1,79 @@
-/*============================================================
-	FLEXEE GRID
-	Flexbox-based 12-column CSS grid system
-	By Leesa Ward (a.k.a. Double-E Design)
-	github.com/doubleedesign
-============================================================*/
+/**
+ * Flexee Grid
+ * Flexbox-based CSS grid system
+ * Author: Leesa Ward
+ * URI: https://www.github.com/doubleedesign/Flexee-Grid
+ */
 
-//=============================
-	// MAIN VARIABLES
-// ============================
-
+// Main config
 $base-font-size: 	16px;
 $gutter:     		2em;
 $column-count: 		12;
 
 // Breakpoints
-$smaller: 			30em; 		// 480px 
-$small:       		37.5em; 	// 600px 
-$medium: 		 	48em; 		// 768px 
-$tablet:        	60em; 		// 960px 
+$smaller: 			30em; 		// 480px
+$small:       		37.5em; 	// 600px
+$medium: 		 	48em; 		// 768px
+$tablet:        	60em; 		// 960px
 $large:        		80em; 		// 1280px
 $xlarge: 			100em; 		// 1600px
 $xxlarge: 			120em; 		// 1920px
 
 // Spacing
 $grid-gutter: (
-  'start' 	: 0.625em, // 10px
-  'small'  	: 0.625em, // 10px
-  'medium' 	: 1.250em, // 20px
-  'tablet' 	: 1.250em, // 20px
-  'large'  	: 1.875em, // 30px
-  'xlarge' 	: 2.500em, // 40px
-  'xxlarge' : 2.500em, // 50px
+		'start' 	: 0.625em, // 10px
+		'small'  	: 0.625em, // 10px
+		'medium' 	: 1.250em, // 20px
+		'tablet' 	: 1.250em, // 20px
+		'large'  	: 1.875em, // 30px
+		'xlarge' 	: 2.500em, // 40px
+		'xxlarge' : 2.500em, // 50px
 );
 $global-padding: 1.875em;
-$global-margin: 1.875em; 
+$global-margin: 1.875em;
 
 // Boundaries
 $start: 			20em; 		// 320px, assuming $base-font-size is 16px
 $boundary: 			140.625em; 	// 2250px; Note: 1920px is 120em if you prefer that
-$row-width: 		80em; 		// The maximum width of each row. 
-								// It may be different to $boundary, which is for the whole site.
-								// If you want to use the xlarge and xxlarge breakpoints for the layout,
-								// set this to the same or larger than the largest breakpoint you want to use.
-	
-//=============================
-	// BREAKPOINT MIXINS
-//=============================						
-								
+$row-width: 		80em; 		// The maximum width of each row.
+// It may be different to $boundary, which is for the whole site.
+// If you want to use the xlarge and xxlarge breakpoints for the layout,
+// set this to the same or larger than the largest breakpoint you want to use.
+
+
+// Breakpoint mixins
 @mixin bp-small {
-  @media only screen and (min-width: $small) {
-    @content;
-  }
+	@media only screen and (min-width: $small) {
+		@content;
+	}
 }
 @mixin bp-medium {
-  @media only screen and (min-width: $medium) {
-    @content;
-  }
+	@media only screen and (min-width: $medium) {
+		@content;
+	}
 }
 @mixin bp-tablet {
-  @media only screen and (min-width: $tablet) {
-    @content;
-  }
+	@media only screen and (min-width: $tablet) {
+		@content;
+	}
 }
 @mixin bp-large {
-  @media only screen and (min-width: $large) {
-    @content;
-  }
+	@media only screen and (min-width: $large) {
+		@content;
+	}
 }
 @mixin bp-xlarge {
-  @media only screen and (min-width: $xlarge) {
-    @content;
-  }
+	@media only screen and (min-width: $xlarge) {
+		@content;
+	}
 }
 @mixin bp-xxlarge {
-  @media only screen and (min-width: $xxlarge) {
-    @content;
-  }
+	@media only screen and (min-width: $xxlarge) {
+		@content;
+	}
 }
 
-// =============================
-	// GENERAL
-// =============================
-
+// General
 body {
 	min-width: $start;
 	max-width: $boundary;
@@ -89,46 +81,47 @@ body {
 }
 
 [class*="row"]{
-  box-sizing: border-box;
-  display: flex;
-  flex-flow: row wrap;
+	box-sizing: border-box;
+	display: flex;
+	flex-flow: row wrap;
 }
+
 .column,
 .columns {
-  box-sizing: border-box;
-  flex: 0 auto;
-  padding-left: map-get($grid-gutter,start);
-  padding-right: map-get($grid-gutter,start);
-  
-   @include bp-small {
-	   padding-left: map-get($grid-gutter,$small);
-  	   padding-right: map-get($grid-gutter,$small);
-   }
-   
-   @include bp-medium {
-	   padding-left: map-get($grid-gutter,$medium);
-  	   padding-right: map-get($grid-gutter,$medium);
-   }
-   
-   @include bp-tablet {
-	   padding-left: map-get($grid-gutter,$tablet);
-  	   padding-right: map-get($grid-gutter,$tablet);
-   }
-   
-   @include bp-large {
-	   padding-left: map-get($grid-gutter,$large);
-  	   padding-right: map-get($grid-gutter,$large);
-   }
-   
-   @include bp-xlarge {
-	   padding-left: map-get($grid-gutter,$xlarge);
-  	   padding-right: map-get($grid-gutter,$xlarge);
-   }
-   
-   @include bp-xxlarge {
-	   padding-left: map-get($grid-gutter,$xxlarge);
-  	   padding-right: map-get($grid-gutter,$xxlarge);
-   }
+	box-sizing: border-box;
+	flex: 0 auto;
+	padding-left: map-get($grid-gutter,start);
+	padding-right: map-get($grid-gutter,start);
+
+	@include bp-small {
+		padding-left: map-get($grid-gutter,$small);
+		padding-right: map-get($grid-gutter,$small);
+	}
+
+	@include bp-medium {
+		padding-left: map-get($grid-gutter,$medium);
+		padding-right: map-get($grid-gutter,$medium);
+	}
+
+	@include bp-tablet {
+		padding-left: map-get($grid-gutter,$tablet);
+		padding-right: map-get($grid-gutter,$tablet);
+	}
+
+	@include bp-large {
+		padding-left: map-get($grid-gutter,$large);
+		padding-right: map-get($grid-gutter,$large);
+	}
+
+	@include bp-xlarge {
+		padding-left: map-get($grid-gutter,$xlarge);
+		padding-right: map-get($grid-gutter,$xlarge);
+	}
+
+	@include bp-xxlarge {
+		padding-left: map-get($grid-gutter,$xxlarge);
+		padding-right: map-get($grid-gutter,$xxlarge);
+	}
 }
 
 @mixin grid-gutter-collapse { // Removes the padding from columns
@@ -136,18 +129,14 @@ body {
 	padding-right: 0;
 }
 
-.nogutter {
+.no-gutter {
 	@include grid-gutter-collapse;
 }
 
-//=============================
-	// GUTS OF THE GRID
-//=============================
-
-/* All Rows */
-[class*="row"] { 
-	max-width: $row-width; 
-	margin: 0 auto; 
+// All rows
+[class*="row"] {
+	max-width: $row-width;
+	margin: 0 auto;
 }
 
 /* ==== OPTION ONE ==== */
@@ -165,7 +154,7 @@ $ninth: 		100%/9;
 $tenth: 		100%/10;
 $eleventh: 		100%/11;
 $twelfth: 		100%/12;
-// If your $column-count is larger than 12, add more variables here accordingly. You will also need to add more row classes below. 
+// If your $column-count is larger than 12, add more variables here accordingly. You will also need to add more row classes below.
 
 .row-of-1 .column { flex-basis: 100%; max-width: 100%; }
 .row-of-2 .column { flex-basis: $half; max-width: $half; }
@@ -180,7 +169,7 @@ $twelfth: 		100%/12;
 .row-of-11 .column { flex-basis: $eleventh; max-width: $eleventh; }
 .row-of-12 .column { flex-basis: $twelfth; max-width: $twelfth; }
 
- @include bp-small {
+@include bp-small {
 	.small-row-of-1 .column { flex-basis: 100%; max-width: 100%; }
 	.small-row-of-2 .column { flex-basis: $half; max-width: $half; }
 	.small-row-of-3 .column { flex-basis: $third; max-width: $third; }
@@ -192,10 +181,10 @@ $twelfth: 		100%/12;
 	.small-row-of-9 .column { flex-basis: $ninth; max-width: $ninth; }
 	.small-row-of-10 .column { flex-basis: $tenth; max-width: $tenth; }
 	.small-row-of-11 .column { flex-basis: $eleventh; max-width: $eleventh; }
-	.small-row-of-12 .column { flex-basis: $twelfth; max-width: $twelfth; }	
+	.small-row-of-12 .column { flex-basis: $twelfth; max-width: $twelfth; }
 }
 
- @include bp-medium {
+@include bp-medium {
 	.medium-row-of-1 .column { flex-basis: 100%; max-width: 100%; }
 	.medium-row-of-2 .column { flex-basis: $half; max-width: $half; }
 	.medium-row-of-3 .column { flex-basis: $third; max-width: $third; }
@@ -207,10 +196,10 @@ $twelfth: 		100%/12;
 	.medium-row-of-9 .column { flex-basis: $ninth; max-width: $ninth; }
 	.medium-row-of-10 .column { flex-basis: $tenth; max-width: $tenth; }
 	.medium-row-of-11 .column { flex-basis: $eleventh; max-width: $eleventh; }
-	.medium-row-of-12 .column { flex-basis: $twelfth; max-width: $twelfth; }	
+	.medium-row-of-12 .column { flex-basis: $twelfth; max-width: $twelfth; }
 }
 
- @include bp-tablet {
+@include bp-tablet {
 	.tablet-row-of-1 .column { flex-basis: 100%; max-width: 100%; }
 	.tablet-row-of-2 .column { flex-basis: $half; max-width: $half; }
 	.tablet-row-of-3 .column { flex-basis: $third; max-width: $third; }
@@ -222,10 +211,10 @@ $twelfth: 		100%/12;
 	.tablet-row-of-9 .column { flex-basis: $ninth; max-width: $ninth; }
 	.tablet-row-of-10 .column { flex-basis: $tenth; max-width: $tenth; }
 	.tablet-row-of-11 .column { flex-basis: $eleventh; max-width: $eleventh; }
-	.tablet-row-of-12 .column { flex-basis: $twelfth; max-width: $twelfth; }	
+	.tablet-row-of-12 .column { flex-basis: $twelfth; max-width: $twelfth; }
 }
 
- @include bp-large {
+@include bp-large {
 	.large-row-of-1 .column { flex-basis: 100%; max-width: 100%; }
 	.large-row-of-2 .column { flex-basis: $half; max-width: $half; }
 	.large-row-of-3 .column { flex-basis: $third; max-width: $third; }
@@ -237,10 +226,10 @@ $twelfth: 		100%/12;
 	.large-row-of-9 .column { flex-basis: $ninth; max-width: $ninth; }
 	.large-row-of-10 .column { flex-basis: $tenth; max-width: $tenth; }
 	.large-row-of-11 .column { flex-basis: $eleventh; max-width: $eleventh; }
-	.large-row-of-12 .column { flex-basis: $twelfth; max-width: $twelfth; }	
+	.large-row-of-12 .column { flex-basis: $twelfth; max-width: $twelfth; }
 }
 
- @include bp-xlarge {
+@include bp-xlarge {
 	.xlarge-row-of-1 .column { flex-basis: 100%; max-width: 100%; }
 	.xlarge-row-of-2 .column { flex-basis: $half; max-width: $half; }
 	.xlarge-row-of-3 .column { flex-basis: $third; max-width: $third; }
@@ -252,10 +241,10 @@ $twelfth: 		100%/12;
 	.xlarge-row-of-9 .column { flex-basis: $ninth; max-width: $ninth; }
 	.xlarge-row-of-10 .column { flex-basis: $tenth; max-width: $tenth; }
 	.xlarge-row-of-11 .column { flex-basis: $eleventh; max-width: $eleventh; }
-	.xlarge-row-of-12 .column { flex-basis: $twelfth; max-width: $twelfth; }	
+	.xlarge-row-of-12 .column { flex-basis: $twelfth; max-width: $twelfth; }
 }
 
- @include bp-xxlarge {
+@include bp-xxlarge {
 	.xxlarge-row-of-1 .column { flex-basis: 100%; max-width: 100%; }
 	.xxlarge-row-of-2 .column { flex-basis: $half; max-width: $half; }
 	.xxlarge-row-of-3 .column { flex-basis: $third; max-width: $third; }
@@ -267,7 +256,7 @@ $twelfth: 		100%/12;
 	.xxlarge-row-of-9 .column { flex-basis: $ninth; max-width: $ninth; }
 	.xxlarge-row-of-10 .column { flex-basis: $tenth; max-width: $tenth; }
 	.xxlarge-row-of-11 .column { flex-basis: $eleventh; max-width: $eleventh; }
-	.xxlarge-row-of-12 .column { flex-basis: $twelfth; max-width: $twelfth; }	
+	.xxlarge-row-of-12 .column { flex-basis: $twelfth; max-width: $twelfth; }
 }
 
 
@@ -287,7 +276,7 @@ $columns-9: ($columns-1*9);
 $columns-10: ($columns-1*10);
 $columns-11: ($columns-1*11);
 $columns-12: ($columns-1*12);
-// If your $column-count is larger than 12, add more variables here accordingly. You will also need to add more column classes below. 
+// If your $column-count is larger than 12, add more variables here accordingly. You will also need to add more column classes below.
 
 .row .columns {
 	&.start-1 { flex-basis: $columns-1; max-width: $columns-1; }
@@ -302,8 +291,8 @@ $columns-12: ($columns-1*12);
 	&.start-10 { flex-basis: $columns-10; max-width: $columns-10; }
 	&.start-11 { flex-basis: $columns-11; max-width: $columns-11; }
 	&.start-12 { flex-basis: $columns-12; max-width: $columns-12; }
-	
-	 @include bp-small {
+
+	@include bp-small {
 		&.small-1 { flex-basis: $columns-1; max-width: $columns-1; }
 		&.small-2 { flex-basis: $columns-2; max-width: $columns-2; }
 		&.small-3 { flex-basis: $columns-3; max-width: $columns-3; }
@@ -317,8 +306,8 @@ $columns-12: ($columns-1*12);
 		&.small-11 { flex-basis: $columns-11; max-width: $columns-11; }
 		&.small-12 { flex-basis: $columns-12; max-width: $columns-12; }
 	}
-	
-	 @include bp-medium {
+
+	@include bp-medium {
 		&.medium-1 { flex-basis: $columns-1; max-width: $columns-1; }
 		&.medium-2 { flex-basis: $columns-2; max-width: $columns-2; }
 		&.medium-3 { flex-basis: $columns-3; max-width: $columns-3; }
@@ -332,8 +321,8 @@ $columns-12: ($columns-1*12);
 		&.medium-11 { flex-basis: $columns-11; max-width: $columns-11; }
 		&.medium-12 { flex-basis: $columns-12; max-width: $columns-12; }
 	}
-	
-	 @include bp-tablet {
+
+	@include bp-tablet {
 		&.tablet-1 { flex-basis: $columns-1; max-width: $columns-1; }
 		&.tablet-2 { flex-basis: $columns-2; max-width: $columns-2; }
 		&.tablet-3 { flex-basis: $columns-3; max-width: $columns-3; }
@@ -347,8 +336,8 @@ $columns-12: ($columns-1*12);
 		&.tablet-11 { flex-basis: $columns-11; max-width: $columns-11; }
 		&.tablet-12 { flex-basis: $columns-12; max-width: $columns-12; }
 	}
-	
-	 @include bp-large {
+
+	@include bp-large {
 		&.large-1 { flex-basis: $columns-1; max-width: $columns-1; }
 		&.large-2 { flex-basis: $columns-2; max-width: $columns-2; }
 		&.large-3 { flex-basis: $columns-3; max-width: $columns-3; }
@@ -362,8 +351,8 @@ $columns-12: ($columns-1*12);
 		&.large-11 { flex-basis: $columns-11; max-width: $columns-11; }
 		&.large-12 { flex-basis: $columns-12; max-width: $columns-12; }
 	}
-	
-	 @include bp-xlarge {
+
+	@include bp-xlarge {
 		&.xlarge-1 { flex-basis: $columns-1; max-width: $columns-1; }
 		&.xlarge-2 { flex-basis: $columns-2; max-width: $columns-2; }
 		&.xlarge-3 { flex-basis: $columns-3; max-width: $columns-3; }
@@ -377,8 +366,8 @@ $columns-12: ($columns-1*12);
 		&.xlarge-11 { flex-basis: $columns-11; max-width: $columns-11; }
 		&.xlarge-12 { flex-basis: $columns-12; max-width: $columns-12; }
 	}
-	
-	 @include bp-xxlarge {
+
+	@include bp-xxlarge {
 		&.xxlarge-1 { flex-basis: $columns-1; max-width: $columns-1; }
 		&.xxlarge-2 { flex-basis: $columns-2; max-width: $columns-2; }
 		&.xxlarge-3 { flex-basis: $columns-3; max-width: $columns-3; }
@@ -392,15 +381,15 @@ $columns-12: ($columns-1*12);
 		&.xxlarge-11 { flex-basis: $columns-11; max-width: $columns-11; }
 		&.xxlarge-12 { flex-basis: $columns-12; max-width: $columns-12; }
 	}
-	
+
 }
 
 
 /* ==== OPTION THREE ==== */
 /* Spread all blocks evenly as long as their content fits, no matter how many there is.
 Can be the messiest depending on how uniform your content is.*/
-.row-fit { 
-	> .column { 
-		flex: auto; 
+.row-fit {
+	> .column {
+		flex: auto;
 	}
 }
