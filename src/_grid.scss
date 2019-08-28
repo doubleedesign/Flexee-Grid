@@ -145,6 +145,15 @@ body {
  * wrapping onto a new line if there's more
  */
 
+@for $i from 1 through $column-count {
+	.row-of-#{$i} {
+		.column {
+			flex-basis: 100%/$i;
+			max-width: 100%/$i;
+		}
+	}
+}
+
 $half: 			100%/2;
 $third:			100%/3;
 $quarter:		100%/4;
