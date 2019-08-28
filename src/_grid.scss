@@ -139,9 +139,11 @@ body {
 	margin: 0 auto;
 }
 
-/* ==== OPTION ONE ==== */
-/* Evenly distributed rows of blocks based on the class given to the containing row,
-wrapping onto a new line if there's more*/
+/*
+ * ==== OPTION ONE ====
+ * Evenly distributed rows of blocks based on the class given to the containing row,
+ * wrapping onto a new line if there's more
+ */
 
 $half: 			100%/2;
 $third:			100%/3;
@@ -260,8 +262,10 @@ $twelfth: 		100%/12;
 }
 
 
-/* ==== OPTION TWO ==== */
-/* Variable width blocks based on the class given to the columns */
+/*
+ * ==== OPTION TWO ====
+ * Variable width blocks based on the class given to the columns
+ */
 
 // Column widths
 $columns-1: (100%/$column-count);
@@ -385,9 +389,12 @@ $columns-12: ($columns-1*12);
 }
 
 
-/* ==== OPTION THREE ==== */
-/* Spread all blocks evenly as long as their content fits, no matter how many there is.
-Can be the messiest depending on how uniform your content is.*/
+/*
+ * ==== OPTION THREE ====
+ * Spread all blocks evenly as long as their content fits, no matter how many there is.
+ * Can be the messiest depending on how uniform your content is.
+ */
+
 .row-fit {
 	> .column {
 		flex: auto;
