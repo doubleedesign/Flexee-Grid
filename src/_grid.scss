@@ -12,24 +12,24 @@ $column-count: 		12;
 
 // Breakpoints
 $breakpoints: (
-		'smaller'	: 30em,		// 480px
-		'small'  	: 37.5em, 	// 600px
-		'medium' 	: 48em, 	// 768px
-		'tablet' 	: 60em, 	// 960px
-		'large'  	: 80em,		// 1280px
-		'xlarge' 	: 100em, 	// 1600px
-		'xxlarge' 	: 120em, 	// 1920px
+	'smaller'	: 30em,		// 480px
+	'small'  	: 37.5em, 	// 600px
+	'medium' 	: 48em, 	// 768px
+	'tablet' 	: 60em, 	// 960px
+	'large'  	: 80em,		// 1280px
+	'xlarge' 	: 100em, 	// 1600px
+	'xxlarge' 	: 120em, 	// 1920px
 );
 
 // Spacing
 $grid-gutter: (
-		'start' 	: 0.625em, // 10px
-		'small'  	: 0.625em, // 10px
-		'medium' 	: 1.250em, // 20px
-		'tablet' 	: 1.250em, // 20px
-		'large'  	: 1.875em, // 30px
-		'xlarge' 	: 2.500em, // 40px
-		'xxlarge' 	: 2.500em, // 50px
+	'start' 	: 0.625em, // 10px
+	'small'  	: 0.625em, // 10px
+	'medium' 	: 1.250em, // 20px
+	'tablet' 	: 1.250em, // 20px
+	'large'  	: 1.875em, // 30px
+	'xlarge' 	: 2.500em, // 40px
+	'xxlarge' 	: 2.500em, // 50px
 );
 $global-padding: 1.875em;
 $global-margin: 1.875em;
