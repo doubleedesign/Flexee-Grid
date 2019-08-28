@@ -147,65 +147,29 @@ body {
  * wrapping onto a new line if there's more
  */
 
+// Starting/all sizes
 @for $i from 1 through $column-count {
-
 	.row-of-#{$i} {
 		.column {
 			flex-basis: 100%/$i;
 			max-width: 100%/$i;
 		}
 	}
+}
 
-	@include bp-small {
-		.small-row-of-#{$i} {
-			.column {
-				flex-basis: 100%/$i;
-				max-width: 100%/$i;
-			}
-		}
-	}
+// Responsive. Loop through the breakpoints,
+// and within that loop through the column count to create .breakpoint-row-of-x classes
+// Note: Dynamic mixin names are not a thing so we have to use the full media query
+@each $name, $value in $breakpoints  {
 
-	@include bp-medium {
-		.medium-row-of-#{$i} {
-			.column {
-				flex-basis: 100%/$i;
-				max-width: 100%/$i;
-			}
-		}
-	}
+	@media only screen and (min-width: map-get($breakpoints, $name)) {
 
-	@include bp-tablet {
-		.tablet-row-of-#{$i} {
-			.column {
-				flex-basis: 100%/$i;
-				max-width: 100%/$i;
-			}
-		}
-	}
-
-	@include bp-large {
-		.large-row-of-#{$i} {
-			.column {
-				flex-basis: 100%/$i;
-				max-width: 100%/$i;
-			}
-		}
-	}
-
-	@include bp-xlarge {
-		.xlarge-row-of-#{$i} {
-			.column {
-				flex-basis: 100%/$i;
-				max-width: 100%/$i;
-			}
-		}
-	}
-
-	@include bp-xxlarge {
-		.xxlarge-row-of-#{$i} {
-			.column {
-				flex-basis: 100%/$i;
-				max-width: 100%/$i;
+		@for $i from 1 through $column-count {
+			.#{$name}-row-of-#{$i} {
+				.column {
+					flex-basis: 100%/$i;
+					max-width: 100%/$i;
+				}
 			}
 		}
 	}
