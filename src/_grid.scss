@@ -9,6 +9,7 @@
 $base-font-size: 	16px;
 $gutter:     		2em;
 $column-count: 		12;
+$column-width: 		100%/$column-count;
 
 // Breakpoints
 $breakpoints: (
@@ -158,9 +159,6 @@ body {
  * ==== OPTION TWO ====
  * Variable width blocks based on the class given to the columns
  */
-
-$column-width: 		100%/$column-count;
-
 .columns {
 
 	// Starting/all sizes
