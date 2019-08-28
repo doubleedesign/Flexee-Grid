@@ -92,37 +92,15 @@ body {
 .columns {
 	box-sizing: border-box;
 	flex: 0 auto;
-	padding-left: map-get($grid-gutter,start);
-	padding-right: map-get($grid-gutter,start);
+	padding-left: map-get($grid-gutter, 'start');
+	padding-right: map-get($grid-gutter, 'start');
 
-	@include bp-small {
-		padding-left: map-get($grid-gutter, 'small');
-		padding-right: map-get($grid-gutter, 'small');
-	}
+	@each $name, $value in $breakpoints {
 
-	@include bp-medium {
-		padding-left: map-get($grid-gutter, 'medium');
-		padding-right: map-get($grid-gutter, 'medium');
-	}
-
-	@include bp-tablet {
-		padding-left: map-get($grid-gutter, 'tablet');
-		padding-right: map-get($grid-gutter, 'tablet');
-	}
-
-	@include bp-large {
-		padding-left: map-get($grid-gutter, 'large');
-		padding-right: map-get($grid-gutter, 'large');
-	}
-
-	@include bp-xlarge {
-		padding-left: map-get($grid-gutter, 'xlarge');
-		padding-right: map-get($grid-gutter, 'xlarge');
-	}
-
-	@include bp-xxlarge {
-		padding-left: map-get($grid-gutter, 'xxlarge');
-		padding-right: map-get($grid-gutter, 'xxlarge');
+		@media only screen and (min-width: map-get($breakpoints, $name)) {
+			padding-left: map-get($grid-gutter, $name);
+			padding-right: map-get($grid-gutter, $name);
+		}
 	}
 }
 
